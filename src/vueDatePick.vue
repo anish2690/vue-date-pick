@@ -351,7 +351,7 @@ export default {
                 ? (currentDate > oldDate ? 'Next' : 'Prev')
                 : undefined
             ;
-            this.$emit('changedMonth',this.currentPeriod)
+            this.$emit('changedMonth', this.currentPeriod);
         }
 
     },
@@ -476,7 +476,7 @@ export default {
                 year: incrementDate.getFullYear()
             };
 
-            this.$emit('changedMonth',this.currentPeriod)
+            this.$emit('changedMonth', this.currentPeriod);
         },
 
         processUserInput(userText) {
