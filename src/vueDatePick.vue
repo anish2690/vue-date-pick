@@ -27,12 +27,16 @@
                 <div class="vdpInnerWrap">
                     <header class="vdpHeader">
                         <button
+                            :disabled="disablePrevMonth"
+                            :class="{'vdpArrowDisable':disablePrevMonth}"
                             class="vdpArrow vdpArrowPrev"
                             v-bind:title="prevMonthCaption"
                             type="button"
                             v-on:click="incrementMonth(-1)"
                         >{{ prevMonthCaption }}</button>
                         <button
+                            :disabled="disableNextMonth"
+                            :class="{'vdpArrowDisable':disableNextMonth}"
                             class="vdpArrow vdpArrowNext"
                             type="button"
                             v-bind:title="nextMonthCaption"
@@ -162,6 +166,8 @@ export default {
         prevMonthCaption: {type: String, default: 'Previous month'},
         setTimeCaption: {type: String, default: 'Set time:'},
         mobileBreakpointWidth: {type: Number, default: 500},
+        startDate: {type: String, default: ''},
+        endDate: {type: String, default: ''},
         weekdays: {
             type: Array,
             default: () => ([
@@ -190,6 +196,19 @@ export default {
     },
 
     computed: {
+        disablePrevMonth() {
+            // if(this.startDate){
+            //     const currentDate = new Date()
+            //     const value = this.parseDateString(this.startDate, this.format)
+            //     console.log(value,value.getMonth() , this.currentPeriod.month)
+            //     return value.getMonth() === this.currentPeriod.month
+            // }
+            return false
+        },
+
+        disableNextMonth() {
+
+        },
 
         valueDate() {
 
@@ -336,7 +355,7 @@ export default {
                 ? (currentDate > oldDate ? 'Next' : 'Prev')
                 : undefined
             ;
-
+            this.$emit('changedMonth',this.currentPeriod)
         }
 
     },
@@ -461,6 +480,7 @@ export default {
                 year: incrementDate.getFullYear()
             };
 
+            this.$emit('changedMonth',this.currentPeriod)
         },
 
         processUserInput(userText) {
