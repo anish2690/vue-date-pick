@@ -166,8 +166,8 @@ export default {
         prevMonthCaption: {type: String, default: 'Previous month'},
         setTimeCaption: {type: String, default: 'Set time:'},
         mobileBreakpointWidth: {type: Number, default: 500},
-        startDate: {type: String, default: ''},
-        endDate: {type: String, default: ''},
+        // startDate: {type: String, default: ''},
+        // endDate: {type: String, default: ''},
         weekdays: {
             type: Array,
             default: () => ([
@@ -196,19 +196,19 @@ export default {
     },
 
     computed: {
-        disablePrevMonth() {
-            // if(this.startDate){
-            //     const currentDate = new Date()
-            //     const value = this.parseDateString(this.startDate, this.format)
-            //     console.log(value,value.getMonth() , this.currentPeriod.month)
-            //     return value.getMonth() === this.currentPeriod.month
-            // }
-            return false
-        },
+        // disablePrevMonth() {
+        //     // if(this.startDate){
+        //     //     const currentDate = new Date()
+        //     //     const value = this.parseDateString(this.startDate, this.format)
+        //     //     console.log(value,value.getMonth() , this.currentPeriod.month)
+        //     //     return value.getMonth() === this.currentPeriod.month
+        //     // }
+        //     return false
+        // },
 
-        disableNextMonth() {
+        // disableNextMonth() {
 
-        },
+        // },
 
         valueDate() {
 
