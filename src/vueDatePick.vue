@@ -27,16 +27,12 @@
                 <div class="vdpInnerWrap">
                     <header class="vdpHeader">
                         <button
-                            :disabled="disablePrevMonth"
-                            :class="{'vdpArrowDisable':disablePrevMonth}"
                             class="vdpArrow vdpArrowPrev"
                             v-bind:title="prevMonthCaption"
                             type="button"
                             v-on:click="incrementMonth(-1)"
                         >{{ prevMonthCaption }}</button>
                         <button
-                            :disabled="disableNextMonth"
-                            :class="{'vdpArrowDisable':disableNextMonth}"
                             class="vdpArrow vdpArrowNext"
                             type="button"
                             v-bind:title="nextMonthCaption"
